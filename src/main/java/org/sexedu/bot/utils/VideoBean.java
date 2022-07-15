@@ -19,6 +19,7 @@ public class VideoBean {
     private String title;
     private String link;
     private List<String> tag;
+    private String preview;
 
     public String get_id() {
         return _id;
@@ -58,5 +59,13 @@ public class VideoBean {
 
     public void setTag(List<String> tag) {
         this.tag = tag;
+    }
+
+    public String getPreview() {
+        return preview;
+    }
+
+    public void setPreview(String preview) {
+        this.preview = preview;
     }
 }

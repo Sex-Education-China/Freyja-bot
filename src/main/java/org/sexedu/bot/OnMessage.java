@@ -1,15 +1,20 @@
 package org.sexedu.bot;
 
-import net.dv8tion.jda.api.events.GenericEvent;
-import net.dv8tion.jda.api.events.message.MessageReceivedEvent;
-import net.dv8tion.jda.api.hooks.EventListener;
+import net.dv8tion.jda.api.events.interaction.command.SlashCommandInteractionEvent;
 import net.dv8tion.jda.api.hooks.ListenerAdapter;
-import org.jetbrains.annotations.NotNull;
 
 public class OnMessage extends ListenerAdapter {
+
     @Override
-    public void onMessageReceived(MessageReceivedEvent event) {
-        System.out.println(event.getMessage().getContentDisplay());
-        System.out.println("Message received!");
+    public void onSlashCommandInteraction(SlashCommandInteractionEvent event)
+    {
+        if (!event.getName().equals("pong")) return; // make sure we handle the right command
+        long time = System.currentTimeMillis();
+        event.reply("Pong!").setEphemeral(true) // reply or acknowledge
+                .flatMap(v ->
+                        event.getHook().editOriginalFormat("Pong: %d ms", System.currentTimeMillis() - time) // then edit original
+                ).queue(); // Queue both reply and edit
     }
 }
+
+

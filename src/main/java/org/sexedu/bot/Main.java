@@ -11,10 +11,13 @@ import javax.security.auth.login.LoginException;
 public class Main {
     public static final String TOKEN = "OTk1OTYxMDM0NDYyNDYyMDcz.GGuTDy.vxZWS1aidpRvbg7Nyt_bnOz-DgfjNVWZ9kcNq4";
 
-    public static void main(String[] args) throws LoginException, InterruptedException {
-        long guildId = 995978812271628348L; //Discord4J's server ID.
+    public static void main(String[] args) throws LoginException {
+        long guildId = 995978812271628348L;
         JDA jda = JDABuilder.createDefault(TOKEN).build();
+        jda.addEventListener(new OnMessage());
         //JDACommands.start(jda, PingCommand.class);
+        jda.upsertCommand("pong", "Calculate ping of the bot").queue();
+        jda.
         JDACommands.slash(jda, Main.class).registrationPolicy(CommandRegistrationPolicy.MIGRATING).guilds(guildId).startGuild();
     }
 }
