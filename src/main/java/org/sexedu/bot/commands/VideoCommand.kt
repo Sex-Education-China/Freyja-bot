@@ -12,7 +12,7 @@ import java.util.*
 
 @CommandController
 class VideoCommand {
-    @Command(value =["ping2"] ,desc="获取视频")
+    @Command(value =["ping"] ,desc="获取视频")
     fun video(event:CommandEvent) {
         try {
             val map = HashMap<String,String>()
@@ -29,11 +29,13 @@ class VideoCommand {
             var embed = EmbedBuilder()
                 .addField("标题", enums[0].title + "\n", false)
                 .addField("标签", enums[0].tag.toString(), false)
-                .setThumbnail(enums[0].preview)
+                .setImage(enums[0].preview)
                 .setColor(0x00ff00)
 
             event.reply(embed)
+            println("called")
         } catch (InvocationTargetException: Exception) {
+            println("error")
         }
     }
 }

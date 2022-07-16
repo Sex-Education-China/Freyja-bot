@@ -8,7 +8,7 @@ public class OnMessage extends ListenerAdapter {
     @Override
     public void onSlashCommandInteraction(SlashCommandInteractionEvent event)
     {
-        if (!event.getName().equals("pong")) return; // make sure we handle the right command
+        if (!event.getName().equals("pang")) return; // make sure we handle the right command
         long time = System.currentTimeMillis();
         event.reply("Pong!").setEphemeral(true) // reply or acknowledge
                 .flatMap(v ->

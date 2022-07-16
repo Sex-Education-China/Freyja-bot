@@ -16,7 +16,7 @@ public class Main {
         JDA jda = JDABuilder.createDefault(TOKEN).build();
         jda.addEventListener(new OnMessage());
         //JDACommands.start(jda, PingCommand.class);
-        jda.upsertCommand("pong", "Calculate ping of the bot").queue();
+        jda.upsertCommand("pang", "Calculate ping of the bot");
         JDACommands.slash(jda, Main.class).registrationPolicy(CommandRegistrationPolicy.MIGRATING).guilds(guildId).startGuild();
     }
 }

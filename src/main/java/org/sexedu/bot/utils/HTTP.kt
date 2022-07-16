@@ -1,12 +1,10 @@
-package org.sexedu.bot.utils;
+package org.sexedu.bot.utils
 
-import cn.hutool.http.HttpUtil;
+import cn.hutool.http.HttpUtil
 
-import java.util.Map;
-
-public class HTTP {
-    public static final String SERVER = "http://localhost:6000/";
-    public static String sendPost(String url, Map<String, Object> paramMap) {
-        return HttpUtil.post(SERVER + url, paramMap);
+object HTTP {
+    const val SERVER = "http://localhost:6000/"
+    fun sendPost(url: String, paramMap: Map<String?, Any?>?): String {
+        return HttpUtil.post(SERVER + url, paramMap)
     }
 }

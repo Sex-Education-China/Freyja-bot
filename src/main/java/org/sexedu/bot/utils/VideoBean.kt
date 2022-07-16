@@ -1,11 +1,9 @@
-package org.sexedu.bot.utils;
+package org.sexedu.bot.utils
 
-import lombok.ToString;
+import lombok.ToString
 
-import java.util.List;
 @ToString
-public class VideoBean {
-
+class VideoBean {
     /**
      * _id : 62c8450b4214f366eb7977b8
      * id : -2147483648
@@ -13,59 +11,17 @@ public class VideoBean {
      * link : https://hot-box-gen.mushroomtrack.com/hls/be1q59PTXzclaNRF8GUT5w/1657301454/25000/25258/25258.m3u8
      * tag : ["[角色劇情, 少女, 巨乳, 中出, 痴女, 誘惑, 家政婦, 口爆]"]
      */
-
-    private String _id;
-    private int id;
-    private String title;
-    private String link;
-    private List<String> tag;
-    private String preview;
-
-    public String get_id() {
-        return _id;
+    private var _id: String? = null
+    var id = 0
+    var title: String? = null
+    var link: String? = null
+    var tag: List<String>? = null
+    var preview: String? = null
+    fun get_id(): String? {
+        return _id
     }
 
-    public void set_id(String _id) {
-        this._id = _id;
-    }
-
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getLink() {
-        return link;
-    }
-
-    public void setLink(String link) {
-        this.link = link;
-    }
-
-    public List<String> getTag() {
-        return tag;
-    }
-
-    public void setTag(List<String> tag) {
-        this.tag = tag;
-    }
-
-    public String getPreview() {
-        return preview;
-    }
-
-    public void setPreview(String preview) {
-        this.preview = preview;
+    fun set_id(_id: String?) {
+        this._id = _id
     }
 }
