@@ -9,6 +9,7 @@ import net.dv8tion.jda.api.EmbedBuilder
 import org.sexedu.bot.utils.HTTP
 import org.sexedu.bot.utils.VideoBean
 import java.util.*
+import kotlin.collections.HashMap
 
 @CommandController
 class VideoCommand {
@@ -16,7 +17,7 @@ class VideoCommand {
     fun video(event:CommandEvent) {
         try {
             val map = HashMap<String,String>()
-            var str = HTTP.sendPost("admin/randomVideo", map as Map<String, Any>?)
+            var str = HTTP.sendPost("admin/randomVideo", map)
             ClipboardUtil.setStr(str)
             var gson = Gson()
                 .newBuilder()
