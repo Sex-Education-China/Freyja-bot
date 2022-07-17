@@ -9,6 +9,6 @@ object User {
         map.put("username",user)
         map.put("password",password)
         map.put("id",id)
-        return HTTP.sendPost("/user/register", map as Map<String, Any>?)
+        return HTTP.sendPost("/user/register", map)
     }
 }
